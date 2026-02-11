@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>部门详情</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav class="dept-navbar">
+    <div class="nav-left">
+        <button onclick="goHome()">← 返回首页</button>
+    </div>
+    <div class="nav-right">
+        <span id="deptTitle" class="dept-title"></span>
+    </div>
+</nav>
+
+<div class="dept-layout">
+
+    <!-- 左侧汇总 -->
+    <div class="dept-summary">
+
+        <div class="summary-card">
+            <h3>合同数量</h3>
+            <p id="totalContracts">0</p>
+        </div>
+
+        <div class="summary-card">
+            <h3>合同总额</h3>
+            <p id="totalAmount">0</p>
+        </div>
+
+        <div class="summary-card">
+            <h3>总回款</h3>
+            <p id="totalPaid">0</p>
+        </div>
+
+        <div class="summary-card">
+            <h3>总成本</h3>
+            <p id="totalCost">0</p>
+        </div>
+
+        <div class="chart-box">
+            <canvas id="costChart"></canvas>
+        </div>
+
+    </div>
+
+    <!-- 右侧功能 -->
+    <div class="dept-actions">
+        <button onclick="showCreate()">创建合同</button>
+        <button onclick="showRecord()">录入数据</button>
+    </div>
+
+</div>
+
+<!-- 弹窗区域 -->
+<div id="modal" class="modal" style="display:none;">
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script src="js/supabase.js"></script>
+<script src="js/department.js"></script>
+
+</body>
+</html>

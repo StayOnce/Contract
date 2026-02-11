@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>合同管理系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav class="main-navbar">
+    <button onclick="goDept('部门1')">部门1</button>
+    <button onclick="goDept('部门2')">部门2</button>
+    <button onclick="goDept('部门3')">部门3</button>
+    <button onclick="goDept('部门4')">部门4</button>
+    <button onclick="goDept('部门5')">部门5</button>
+    <button onclick="goDept('部门6')">部门6</button>
+</nav>
+
+<div class="dashboard">
+    <div class="card">
+        <h3>合同数量分布</h3>
+        <canvas id="countChart"></canvas>
+    </div>
+
+    <div class="card">
+        <h3>合同金额分布</h3>
+        <canvas id="amountChart"></canvas>
+    </div>
+</div>
+
+<script src="js/supabase.js"></script>
+<script src="js/dashboard.js"></script>
+
+<script>
+    function goDept(dept) {
+        window.location.href = `department.html?dept=${encodeURIComponent(dept)}`;
+    }
+</script>
+
+
+</body>
+</html>
